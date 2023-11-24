@@ -29,8 +29,19 @@ public class GerenciaMusicas {
             showMessageDialog(null, "Música avaliada!!");
             break;
           }
-           case 3:{
-            musicaDAO.listar();
+          case 3:{
+            var musicas = musicaDAO.listar();
+            
+            if(musicas.isEmpty()){
+              //isEmpty valida se a lista está vazia ou não
+              JOptionPane.showMessageDialog(null, "Nenhuma música cadastrada!");
+              break;
+            }
+            
+            for (Musica musica : musicas) {
+              JOptionPane.showMessageDialog(null, musica);
+            }
+            break;
           }
           case 4:{
             String titulo = showInputDialog("Digite o título da música que será excluída.");
