@@ -9,7 +9,8 @@ public class GerenciaMusicas {
     
     var musicaDAO = new MusicaDAO();
     int op = -1;
-    String menu = "1-Cadastrar música\n2-Avaliar música\n3-Ver músicas\n0-Sair";
+    String menu = "1-Cadastrar música\n2-Avaliar música\n3-Ver músicas\n4-Deletar música\n0-Sair";
+    //adicionada a opção de deletar 
     do{
       try{
         op = parseInt(showInputDialog(menu));
@@ -28,8 +29,18 @@ public class GerenciaMusicas {
             showMessageDialog(null, "Música avaliada!!");
             break;
           }
-          case 3:{
+           case 3:{
             musicaDAO.listar();
+          }
+          case 4:{
+            String titulo = showInputDialog("Digite o título da música que será excluída.");
+            if(musicaDAO.buscar(titulo)){
+              musicaDAO.deletar(titulo);
+              JOptionPane.showMessageDialog(null, "Música " + titulo + " excluída com sucesso!");
+              break;
+            }
+            JOptionPane.showMessageDialog(null, "Nenhuma música encontrada com o título: " + titulo);
+            break;
           }
           case 0:
             showMessageDialog(null, "Até logo");
