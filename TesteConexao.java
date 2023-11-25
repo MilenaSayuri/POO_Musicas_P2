@@ -10,7 +10,7 @@ public class TesteConexao{
       Connection conexao = DriverManager.getConnection(
         s,
         "postgres",
-        "postgres"
+        "123456"
       );
       System.out.println(conexao);
     }

@@ -1,8 +1,8 @@
 import java.io.FileInputStream;
-import java.nio.file.Paths;
 import java.sql.DriverManager;
 import java.io.File;
 import java.util.Properties;
+
 public class ConnectionFactory {
   private static Properties properties;
   static{

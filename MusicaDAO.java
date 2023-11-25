@@ -1,8 +1,6 @@
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
-import javax.swing.JOptionPane;
 public class MusicaDAO {
 
   public void cadastrar(Musica musica) throws Exception{
@@ -50,7 +48,7 @@ public class MusicaDAO {
     try(
       var conexao = ConnectionFactory.conectar();
       var ps = conexao.prepareStatement(sql);
-      
+
       ){
       
         try(
